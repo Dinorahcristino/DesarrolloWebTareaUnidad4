@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par o Impar</title>
+</head>
+
+<body>
+
+    <script>
+        // Solicitar al usuario que ingrese un número
+        let numero = prompt("Introduce un número:");
+
+        // Convertir la entrada a un número entero
+        numero = parseInt(numero);
+
+        // Verificar si la entrada es un número válido
+
+        if (isNaN(numero)) 
+         {
+            alert("Por favor, ingresa un número válido.");
+        } else {
+            // Evaluar si el número es par o impar
+            if (numero % 2 === 0) {
+                alert(numero + " es un número par.");
+            } else {
+                alert(numero + " es un número impar.");
+            }
+        }
+    </script>
+</body>
+</html>

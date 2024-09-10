@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Arreglos con Días de la Semana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Arreglos con Días de la Semana</h1>
+    <button onclick="mostrarDias()">Mostrar Ejemplo</button>
+    <pre id="resultado"></pre>
+
+    <script>
+        function mostrarDias() {
+            const resultadoDiv = document.getElementById('resultado');
+            
+            // Crear un arreglo con los días de la semana
+            let diasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+            
+            // Mostrar el arreglo inicial
+            let texto = 'Días de la semana:\n' + JSON.stringify(diasSemana, null, 2) + '\n\n';
+            
+            // Añadir un nuevo día al final del arreglo
+            diasSemana.push('Funday');
+            texto += 'Después de añadir "Funday":\n' + JSON.stringify(diasSemana, null, 2) + '\n\n';
+            
+            // Eliminar el último día del arreglo
+            diasSemana.pop();
+            texto += 'Después de eliminar el último día:\n' + JSON.stringify(diasSemana, null, 2) + '\n\n';
+            
+            // Reemplazar un día específico en el arreglo
+            diasSemana[0] = 'Lunedi';
+            texto += 'Después de reemplazar "Lunes" con "Lunedi":\n' + JSON.stringify(diasSemana, null, 2) + '\n\n';
+            
+            // Encontrar el índice de un día específico
+            let index = diasSemana.indexOf('Jueves');
+            texto += 'Índice de "Jueves": ' + index + '\n\n';
+            
+            // Usar el método `map` para transformar el arreglo
+            let diasEnMinusculas = diasSemana.map(dia => dia.toLowerCase());
+            texto += 'Días de la semana en minúsculas:\n' + JSON.stringify(diasEnMinusculas, null, 2) + '\n\n';
+            
+            // Usar el método `filter` para filtrar los días que contienen 'a'
+            let diasConA = diasSemana.filter(dia => dia.includes('a'));
+            texto += 'Días que contienen "a":\n' + JSON.stringify(diasConA, null, 2) + '\n\n';
+            
+            // Mostrar el resultado en la página
+            resultadoDiv.textContent = texto;
+        }
+    </script>
+</body>
+</html>

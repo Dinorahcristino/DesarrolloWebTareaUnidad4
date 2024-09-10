@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Arreglos en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Arreglos en JavaScript</h1>
+    <button onclick="mostrarArreglos()">Mostrar Ejemplo</button>
+    <pre id="resultado"></pre>
+
+    <script>
+        function mostrarArreglos() {
+            const resultadoDiv = document.getElementById('resultado');
+            
+            // Crear un arreglo
+            let frutas = ['Manzana', 'Banana', 'Cereza'];
+            
+            // Mostrar el arreglo inicial
+            let texto = 'Arreglo inicial:\n' + JSON.stringify(frutas, null, 2) + '\n\n';
+            
+            // Añadir un elemento al final del arreglo
+            frutas.push('Durazno');
+            texto += 'Después de añadir "Durazno":\n' + JSON.stringify(frutas, null, 2) + '\n\n';
+            
+            // Eliminar el último elemento del arreglo
+            frutas.pop();
+            texto += 'Después de eliminar el último elemento:\n' + JSON.stringify(frutas, null, 2) + '\n\n';
+            
+            // Añadir un elemento al principio del arreglo
+            frutas.unshift('Fresa');
+            texto += 'Después de añadir "Fresa" al principio:\n' + JSON.stringify(frutas, null, 2) + '\n\n';
+            
+            // Eliminar el primer elemento del arreglo
+            frutas.shift();
+            texto += 'Después de eliminar el primer elemento:\n' + JSON.stringify(frutas, null, 2) + '\n\n';
+            
+            // Encontrar el índice de un elemento
+            let index = frutas.indexOf('Banana');
+            texto += 'Índice de "Banana": ' + index + '\n\n';
+            
+            // Usar el método `map` para transformar el arreglo
+            let frutasEnMayusculas = frutas.map(fruta => fruta.toUpperCase());
+            texto += 'Frutas en mayúsculas:\n' + JSON.stringify(frutasEnMayusculas, null, 2) + '\n\n';
+            
+            // Usar el método `filter` para filtrar el arreglo
+            let frutasFiltradas = frutas.filter(fruta => fruta.startsWith('C'));
+            texto += 'Frutas que empiezan con "C":\n' + JSON.stringify(frutasFiltradas, null, 2) + '\n\n';
+            
+            // Mostrar el resultado en la página
+            resultadoDiv.textContent = texto;
+        }
+    </script>
+</body>
+</html>
